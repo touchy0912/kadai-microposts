@@ -3,7 +3,16 @@
 @section('content')
     @if(Auth::check())
     <div class='row'>
-        <aside class='col-mid-4'>
+        <aside class='col-xs-4'>
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h3 class='panel-title'>{{$user->name}}</h3>
+                </div>
+                <div class='panel-body'>
+                    <img role='presentation' class='media-object img-rounded img-responsive' src="{{Gravatar::src($user->email,500)}}" alt=''>
+                </div>
+            </div>
+            
         </aside>
         <div class='col-xs-8'>
             @if(count($microposts)>0)
