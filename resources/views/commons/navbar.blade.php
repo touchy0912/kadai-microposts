@@ -20,6 +20,7 @@
                             <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>{{Auth::user()->name}}<span class='caret'></span></a>  
                             <ul class='dropdown-menu'>
                             <li>{!! link_to_route('users.show','My profile',['id'=>Auth::id()]) !!}</li>
+                            <li>{!! link_to_route('user.favorites','Favorites',['id'=>Auth::id()]) !!}</li>
                             <li role='separater' class='devider'></li>
                             <li>{!! link_to_route('logout.get','Log out') !!}</li>
                             </ul>

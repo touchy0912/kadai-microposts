@@ -12,4 +12,9 @@ class Micropost extends Model
         
         return $this->belongsTo(User::class);
     }
+    
+    
+    public function favo_users(){
+        return $this->belongsToMany(User::class,'user_favorite','post_id','user_id');
+    }
 }

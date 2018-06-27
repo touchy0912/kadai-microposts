@@ -12,12 +12,17 @@
             <div>
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
             </div>
-            <div>
+                <div class='row'>
+                    <span class='col-xs-1'>
+                @include('user_favorite.favo_button',['micropost'=>$micropost])
+                </span>
+              <span class='col-xs-1'>
                 @if(Auth::id()==$micropost->user_id)
                 {!! Form::open(['route'=>['microposts.destroy',$micropost->id],'method'=>'delete']) !!}
-                {!! Form::submit('Delete',['class'=>'btn btn-danger btn-xs']) !!}
+                {!! Form::button('<span class="glyphicon glyphicon-trash"></span>' , array('class'=>'btn btn-basic btn-xs','type'=>'submit')) !!}
                 {!! Form::close() !!}
                 @endif
+            </span>
             </div>
             
         </div>
